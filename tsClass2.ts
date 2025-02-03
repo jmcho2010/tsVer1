@@ -74,12 +74,27 @@ interface Test3{
 // 인터페이스를 상속받을때는 extend가 아닌 implements라는 키워드를 써줘야함.
 
 // 인터페이스는 정확하게 상속 개념이 아닌 구현 이라는 표현을 사용.
-class test4 implements Test3{
-    abstMethod(): void {
-        throw new Error("Method not implemented.");
-    }
-    id: number;
-    content: string;
-    completed: boolean;
+// class test4 implements Test3{
+//     abstMethod(): void {
+//         throw new Error("Method not implemented.");
+//     }
+//     id: number;
+//     content: string;
+//     completed: boolean;
     
+// }
+
+// 타입 alias()
+//  -> 새로운 타입을 정의할때 사용.
+//  -> 객체를 선언하는 또다른 방법.
+// 인터페이스를 쓰는게 좋은가? alias를 쓰는게 좋은가?
+// 재사용을 자주한다 : 인터페이스
+//  -> 확장성까지 잡고싶으면 인터페이스
+// 재사용은 둘째치고 내용변경이 거의 안되야한다면 : alias
+
+type Person ={
+    name: string,
+    age: number
 }
+// 비어있는 객체에 Person이라는 타입을 지정.
+const person1 = {} as Person;
